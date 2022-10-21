@@ -13,13 +13,13 @@ session.verify = False
 app_ver_ = ''
 data_ver_ = 0
 date_ver_ = 0
-ver_code_ = 'b5f04cd6cc71c0edd130a23c92ea2e1306b8bafda39f9792a79623b9acfd6787'
+ver_code_ = '37571f5abf22664d59c6753044aaf3516dbb63d6019198ebb40e7248dfae9df3'
 asset_bundle_folder_ = ''
 data_server_folder_crc_ = 0
-server_addr_ = 'https://game.fate-go.jp'
+server_addr_ = 'https://game.fate-go.us'
 github_token_ = ''
 github_name_ = ''
-user_agent_ = 'Dalvik/2.1.0 (Linux; U; Android 11; Pixel 5 Build/RD1A.201105.003.A1)'
+user_agent_ = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.32 Safari/537.36'
 
 
 # ==== User Info ====
