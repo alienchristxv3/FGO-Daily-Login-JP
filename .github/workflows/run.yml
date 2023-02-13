@@ -1,0 +1,52 @@
+name: FGO Login System
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: "00 04 * * *"
+    - cron: "30 04 * * *"
+    - cron: "00 19 * * *"
+    - cron: "30 19 * * *"
+    - cron: "50 19 * * *"
+    - cron: "00 20 * * *"
+    - cron: "30 20 * * *"
+    - cron: "50 20 * * *"
+    - cron: "00 21 * * *"
+    - cron: "30 21 * * *"
+    - cron: "50 21 * * *"
+    - cron: "00 22 * * *"
+    - cron: "30 22 * * *"
+    - cron: "50 22 * * *"
+    - cron: "00 23 * * *"
+    - cron: "30 23 * * *"
+    - cron: "50 23 * * *"
+    - cron: "30 00 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      - name: Install Requeriments
+        run: pip install -r https://raw.githubusercontent.com/O-Isaac/FGO-Daily-Login/master/requirements.txt
+
+      - name: Gettings files from Repo
+        uses: actions/checkout@v3
+
+      - name: Execute main script
+        run: |
+          python3 main.py
+        env:
+          userIds: ${{ secrets.GAME_USERIDS }}
+          authKeys: ${{ secrets.GAME_AUTHKEYS }}
+          secretKeys: ${{ secrets.GAME_SECRETKEYS }}
+          UserAgent: ${{ secrets.GAME_USERAGENT }}
+          fateRegion: ${{ secrets.GAME_REGION }}
+          webhookDiscord: ${{ secrets.DISCORD_WEBHOOK }}
