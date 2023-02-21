@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [master]
   schedule:
-    - cron: "00 04 * * *"
-    - cron: "30 04 * * *"
     - cron: "00 19 * * *"
     - cron: "30 19 * * *"
     - cron: "50 19 * * *"
@@ -24,6 +22,8 @@ on:
     - cron: "30 23 * * *"
     - cron: "50 23 * * *"
     - cron: "30 00 * * *"
+    - cron: "00 04 * * *"
+    - cron: "30 04 * * *"
   workflow_dispatch:
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
         run: pip install -r https://raw.githubusercontent.com/O-Isaac/FGO-Daily-Login/master/requirements.txt
 
       - name: Gettings files from Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Execute main script
         run: |
