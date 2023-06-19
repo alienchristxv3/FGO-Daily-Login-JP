@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: Install Requeriments
-        run: pip install -r https://raw.githubusercontent.com/O-Isaac/FGO-Daily-Login/master/requirements.txt
+        run: pip install -r http://raw.githubusercontent.com/alienchristxv3/FGO-Daily-Login-JP/master/requirements.txt
 
       - name: Gettings files from Repo
         uses: actions/checkout@main
